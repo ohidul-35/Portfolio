@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Md. Ohidul Islam | Mechatronics Engineering Portfolio</title>
+  <style>
+    :root {
+      --bg: #020617;
+      --card: #0f172a;
+      --border: #1e293b;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #22d3ee;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; }
+    a { color: inherit; text-decoration: none; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+    header { position: sticky; top: 0; background: rgba(2, 6, 23, 0.9); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); z-index: 50; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .brand { font-size: 1.25rem; font-weight: 700; color: var(--accent); }
+    .nav-links { display: flex; gap: 1.5rem; font-size: 0.9rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--accent); }
+    .btn { background: var(--accent); color: #020617; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; font-size: 0.875rem; display: inline-block; }
+    .btn-outline { background: var(--card); border: 1px solid var(--border); color: var(--text); padding: 0.6rem 1rem; border-radius: 0.5rem; font-size: 0.875rem; }
+    section { padding: 3.5rem 0; border-bottom: 1px solid var(--border); }
+    h1 { font-size: 3rem; font-weight: 800; margin: 0.5rem 0 1rem; }
+    h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+    .mono { font-family: monospace; color: var(--accent); font-size: 0.85rem; }
+    .summary { color: var(--muted); max-width: 750px; margin-bottom: 1.75rem; }
+    .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+    .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; }
+    .tag { display: inline-block; background: #1e293b; color: #e2e8f0; padding: 0.25rem 0.6rem; border-radius: 0.375rem; font-size: 0.8rem; margin: 0.2rem; }
+    ul { padding-left: 1.2rem; color: var(--muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    footer { text-align: center; padding: 2rem; color: var(--muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-bar">
+      <a href="#" id="nav-name" class="brand">Md. Ohidul Islam</a>
+      <nav class="nav-links">
+        <a href="#research">Research</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+      </nav>
+      <a id="cv-btn" href="#" target="_blank" class="btn">View CV</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <p class="mono">B.Sc. in Mechatronics Engineering (RUET)</p>
+      <h1 id="hero-name">Md. Ohidul Islam</h1>
+      <p id="hero-tagline" style="font-size: 1.2rem; margin-bottom: 1rem;"></p>
+      <p id="hero-summary" class="summary"></p>
+      <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        <a id="email-link" href="#" class="btn-outline">Email Me</a>
+        <a id="linkedin-link" href="#" target="_blank" class="btn-outline">LinkedIn</a>
+        <span id="location-badge" class="btn-outline" style="color: var(--muted);"></span>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2><span class="mono">01.</span> Research & Publications</h2>
+      <div id="research-list" class="grid-2"></div>
+    </section>
+
+    <section id="skills">
+      <h2><span class="mono">02.</span> Technical Skills</h2>
+      <div id="skills-grid" class="grid-2"></div>
+    </section>
+
+    <section id="projects">
+      <h2><span class="mono">03.</span> Featured Projects</h2>
+      <div id="projects-grid" class="grid-3"></div>
+    </section>
+
+    <section id="experience">
+      <div class="grid-2">
+        <div>
+          <h2><span class="mono">04.</span> Industrial Experience</h2>
+          <div id="experience-list"></div>
+        </div>
+        <div>
+          <h2><span class="mono">05.</span> Leadership & Activities</h2>
+          <div id="leadership-list" style="display: grid; gap: 1rem;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="grid-2">
+        <div>
+          <h2><span class="mono">06.</span> Education</h2>
+          <div id="education-list" style="display: grid; gap: 1rem;"></div>
+        </div>
+        <div>
+          <h2><span class="mono">07.</span> References</h2>
+          <div id="references-list" style="display: grid; gap: 1rem;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Powered by Google Drive Headless Storage &bull; Md. Ohidul Islam
+  </footer>
+
+  <script>
+    const DRIVE_API_URL = "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL";
+
+    const FALLBACK_DATA = {
+      profile: {
+        name: "Md. Ohidul Islam",
+        tagline: "Mechatronics Engineer | Embedded Systems, Control Systems & VLSI",
+        location: "Rajshahi, Bangladesh",
+        phone: "+8801701055965",
+        email: "ohidul.2008035.ruet.mte@gmail.com",
+        linkedin: "https://linkedin.com/in/md-ohidul-islam-5960831bb",
+        cvUrl: "https://drive.google.com/open?id=15P6bzUIbRAb92URpE1yS_j19N67bAgZg",
+        summary: "Mechatronics Engineering graduate from Rajshahi University of Engineering & Technology (RUET) with a strong foundation in embedded systems, microcontrollers, electronics, control systems, and programming. Bridges the gap between physical and digital engineering by combining hardware prototyping with simulation and software development across embedded systems, VLSI, robotics, automation, and intelligent engineering systems."
+      },
+      research: [
+        {
+          type: "Journal Publication | Energy Conversion and Management: X (Q1 Journal)",
+          title: "Domain-guided intelligent distributed control for enhancing frequency resilience in multi-microgrids under limited and noisy data",
+          status: "Published",
+          doi: "https://doi.org/10.1016/j.ecmx.2026.101896",
+          highlights: ["Co-authored peer-reviewed paper on cyber-resilient load frequency control in isolated microgrids."]
+        },
+        {
+          type: "Undergraduate Thesis | Supervised by Subrata Kumar Sarker",
+          title: "A Data-Driven Distributed Framework for Cyber-Resilient Frequency Support of Isolated Network Microgrids",
+          status: "Completed",
+          doi: "",
+          highlights: [
+            "Designed Deep Neural Network and Bayesian Regularization Transfer Learning models to detect and mitigate False Data Injection (FDI) attacks.",
+            "Integrated models with PI compensators in MATLAB/Simulink for hierarchical load frequency control."
+          ]
+        }
+      ],
+      skills: {
+        "Simulation & IC/CAD Design": ["MATLAB/Simulink", "Cadence Virtuoso", "Fusion 360", "SolidWorks", "Proteus", "PSpice", "FluidSIM", "OpenPLC", "Tinkercad"],
+        "Programming & Scripting": ["Python", "C", "C++", "HTML"],
+        "Documentation & Graphics": ["Overleaf (LaTeX)", "Adobe Illustrator", "Draw.io", "MS Visio", "MS Office", "Canva", "Snapseed"],
+        "IDEs & Workstations": ["VS Code", "Arduino IDE"]
+      },
+      projects: [
+        { title: "AI-Based Traffic Monitoring System", category: "Computer Vision", description: "YOLO-based vehicle detection, ALPR, and speed estimation system using OpenCV and PaddleOCR.", tech: ["Python", "YOLO", "OpenCV", "PaddleOCR"] },
+        { title: "Arduino-Based DC-DC Boost Converter", category: "Power Electronics", description: "PWM-controlled 5V-16V boost converter with closed-loop voltage regulation.", tech: ["Arduino", "Power Electronics", "PWM"] },
+        { title: "Arduino DC Motor Speed Controller", category: "Control Systems", description: "Closed-loop DC motor speed control system using Arduino and encoder feedback.", tech: ["Arduino", "Encoder", "Closed-Loop"] },
+        { title: "Traffic Control Automation System", category: "Embedded Systems", description: "Smart traffic control system with RFID, IR sensors, and servo automation.", tech: ["Arduino", "RFID", "IR Sensors"] },
+        { title: "Smart Whiteboard Cleaner", category: "Robotics", description: "Automated whiteboard cleaning system with embedded microcontroller control.", tech: ["Embedded C", "Robotics"] },
+        { title: "Driver Drowsiness Detection System", category: "Safety Automation", description: "Embedded anti-sleep alert system using real-time sensor detection.", tech: ["Arduino", "Sensors"] }
+      ],
+      experience: [
+        {
+          role: "Industrial Attachment",
+          company: "WALTON Hi-Tech Industries PLC (Gazipur)",
+          period: "March 2024",
+          highlights: [
+            "Conducted maintenance cost analysis of forklifts and identified faulty units.",
+            "Observed industrial automation, production workflow, QA, and maintenance practices.",
+            "Studied manufacturing of refrigerators, air conditioners, compressors, and appliances."
+          ]
+        }
+      ],
+      leadership: [
+        { role: "Class Representative (4th-7th Semester)", organization: "Dept. of MTE, RUET", period: "2023 - 2025" },
+        { role: "Former Assistant Social Promotional Manager", organization: "Robotic Society of RUET", period: "2024 - 2025" },
+        { role: "Former IT Secretary", organization: "Rajshahi City Association, RUET", period: "RUET" },
+        { role: "Former Assistant Treasurer", organization: "MTE Career Club, RUET", period: "RUET" }
+      ],
+      education: [
+        { degree: "B.Sc. in Mechatronics Engineering", institution: "Rajshahi University of Engineering & Technology (RUET)", period: "August 2026", result: "CGPA: 3.70 / 4.00" },
+        { degree: "Higher Secondary Certificate (HSC)", institution: "Rajshahi Collegiate School & College", period: "2020", result: "GPA: 5.00 / 5.00" },
+        { degree: "Secondary School Certificate (SSC)", institution: "Government Laboratory High School, Rajshahi", period: "2018", result: "GPA: 5.00 / 5.00" }
+      ],
+      references: [
+        { name: "Md. Firoj Ali", title: "Head, Dept. of MTE, RUET", email: "firoj@mte.ruet.ac.bd", phone: "+8801722723898" },
+        { name: "Sarafat Hussain Abhi", title: "Assistant Professor, Dept. of MTE, RUET", email: "abhi@mte.ruet.ac.bd", phone: "+8801782959309" }
+      ]
+    };
+
+    function renderPortfolio(data) {
+      document.getElementById("nav-name").textContent = data.profile.name;
+      document.getElementById("hero-name").textContent = data.profile.name;
+      document.getElementById("hero-tagline").textContent = data.profile.tagline;
+      document.getElementById("hero-summary").textContent = data.profile.summary;
+      document.getElementById("email-link").href = "mailto:" + data.profile.email;
+      document.getElementById("linkedin-link").href = data.profile.linkedin;
+      document.getElementById("location-badge").textContent = data.profile.location + " • " + data.profile.phone;
+      document.getElementById("cv-btn").href = data.profile.cvUrl;
+
+      document.getElementById("research-list").innerHTML = data.research.map(r => `
+        <div class="card">
+          <div class="mono" style="margin-bottom: 0.4rem;">${r.type} (${r.status})</div>
+          <h3 style="margin-bottom: 0.5rem;">${r.title}</h3>
+          <ul>${r.highlights.map(h => `<li>${h}</li>`).join("")}</ul>
+          ${r.doi ? `<div style="margin-top:0.75rem;"><a href="${r.doi}" target="_blank" class="mono">View Publication (DOI) &rarr;</a></div>` : ""}
+        </div>
+      `).join("");
+
+      document.getElementById("skills-grid").innerHTML = Object.entries(data.skills).map(([cat, items]) => `
+        <div class="card">
+          <div class="mono" style="margin-bottom: 0.75rem;">${cat}</div>
+          <div>${items.map(s => `<span class="tag">${s}</span>`).join("")}</div>
+        </div>
+      `).join("");
+
+      document.getElementById("projects-grid").innerHTML = data.projects.map(p => `
+        <div class="card">
+          <div class="mono">${p.category}</div>
+          <h3 style="margin: 0.3rem 0 0.5rem;">${p.title}</h3>
+          <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem;">${p.description}</p>
+          <div>${p.tech.map(t => `<span class="tag">${t}</span>`).join("")}</div>
+        </div>
+      `).join("");
+
+      document.getElementById("experience-list").innerHTML = data.experience.map(e => `
+        <div class="card">
+          <h3>${e.role}</h3>
+          <div class="mono" style="margin-bottom: 0.5rem;">${e.company} &bull; ${e.period}</div>
+          <ul>${e.highlights.map(h => `<li>${h}</li>`).join("")}</ul>
+        </div>
+      `).join("");
+
+      document.getElementById("leadership-list").innerHTML = data.leadership.map(l => `
+        <div class="card" style="padding: 1rem;">
+          <h4>${l.role}</h4>
+          <p style="color: var(--muted); font-size: 0.85rem;">${l.organization} (${l.period})</p>
+        </div>
+      `).join("");
+
+      document.getElementById("education-list").innerHTML = data.education.map(ed => `
+        <div class="card" style="padding: 1rem;">
+          <h4>${ed.degree}</h4>
+          <p style="color: var(--muted); font-size: 0.85rem;">${ed.institution} (${ed.period})</p>
+          <div class="mono" style="margin-top: 0.25rem;">${ed.result}</div>
+        </div>
+      `).join("");
+
+      document.getElementById("references-list").innerHTML = data.references.map(ref => `
+        <div class="card" style="padding: 1rem;">
+          <h4>${ref.name}</h4>
+          <p style="color: var(--muted); font-size: 0.85rem;">${ref.title}</p>
+          <div class="mono" style="margin-top: 0.25rem;">${ref.email} | ${ref.phone}</div>
+        </div>
+      `).join("");
+    }
+
+    async function init() {
+      renderPortfolio(FALLBACK_DATA);
+      if (DRIVE_API_URL && DRIVE_API_URL !== "YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL") {
+        try {
+          const res = await fetch(DRIVE_API_URL);
+          const liveData = await res.json();
+          renderPortfolio(liveData);
+        } catch (err) {
+          console.warn("Using fallback CV data:", err);
+        }
+      }
+    }
+    init();
+  </script>
+</body>
+</html>
+
