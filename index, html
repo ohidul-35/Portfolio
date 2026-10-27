@@ -122,7 +122,7 @@
         phone: "+8801701055965",
         email: "ohidul.2008035.ruet.mte@gmail.com",
         linkedin: "https://linkedin.com/in/md-ohidul-islam-5960831bb",
-        cvUrl: "https://drive.google.com/open?id=15P6bzUIbRAb92URpE1yS_j19N67bAgZg",
+        cvUrl: "#",
         summary: "Mechatronics Engineering graduate from Rajshahi University of Engineering & Technology (RUET) with a strong foundation in embedded systems, microcontrollers, electronics, control systems, and programming. Bridges the gap between physical and digital engineering by combining hardware prototyping with simulation and software development across embedded systems, VLSI, robotics, automation, and intelligent engineering systems."
       },
       research: [
@@ -270,4 +270,3 @@
   </script>
 </body>
 </html>
-
